@@ -1,0 +1,53 @@
+/* Fallback styles to ensure a polished UI if Tailwind isn't applied */
+:root{
+  --bg:#050505;
+  --panel:#0f1720;
+  --muted:#94a3b8;
+  --accent:#1e90ff;
+  --glass: rgba(255,255,255,0.04);
+}
+
+.app-root{
+  min-height:100vh;
+  background:var(--bg);
+  color:#fff;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  display:flex;
+  flex-direction:column;
+}
+
+.app-root header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:16px 32px;
+  background: rgba(15,23,30,0.6);
+  border-bottom:1px solid rgba(255,255,255,0.04);
+}
+
+.app-root header .brand{ display:flex; align-items:center; gap:12px; font-weight:700; letter-spacing:1px }
+
+.app-root .container{ flex:1; display:flex; gap:16px; padding:20px; box-sizing:border-box; }
+
+.app-root .ai-side, .app-root .candidate-side{ flex:1; display:flex; flex-direction:column; gap:16px }
+
+.app-root .ai-side{ background: linear-gradient(180deg, rgba(15,23,30,0.55), rgba(10,12,15,0.55)); border-radius:28px; padding:28px; align-items:center; justify-content:center; border:1px solid rgba(30,58,138,0.15) }
+
+.app-root .bars{ display:flex; gap:8px; align-items:flex-end; height:64px }
+.app-root .bars div{ width:6px; background:var(--accent); border-radius:4px; transition:all .25s }
+
+.app-root .candidate-side .video-wrap{ flex:1; background:var(--panel); border-radius:24px; overflow:hidden; display:flex; align-items:center; justify-content:center }
+.app-root video{ width:100%; height:100%; object-fit:cover }
+
+.app-root .chat-panel{ height:220px; background: rgba(15,23,30,0.5); border-radius:20px; padding:16px; overflow:auto }
+.app-root .message{ max-width:80%; padding:12px 14px; border-radius:14px; margin:8px 0; font-size:14px }
+.app-root .message.aini{ background: rgba(30,64,175,0.12); color:#cfe9ff }
+.app-root .message.user{ background: rgba(255,255,255,0.03); color:#e6eef8; margin-left:auto }
+
+.app-root footer{ padding:24px; display:flex; justify-content:center }
+.app-root .voice-btn{ background:var(--accent); color:#fff; padding:12px 22px; border-radius:999px; border:none; font-weight:700; cursor:pointer }
+
+/* Responsive */
+@media (max-width:900px){
+  .app-root .container{ flex-direction:column }
+}
